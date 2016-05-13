@@ -116,7 +116,7 @@ td, th{ padding: 0; }
 
 /* Apply these base styles to all icons */
 [class^="icon-"]:before, [class*=" icon-"]:before {
-    font-family: "casper-icons", "Open Sans", sans-serif;
+    font-family: "casper-icons", "nimbus-sans", sans-serif;
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -183,7 +183,7 @@ html {
 body {
     height: 100%;
     max-height: 100%;
-    font-family: "Merriweather", serif;
+    font-family: "nimbus-sans", serif;
     letter-spacing: 0.01rem;
     font-size: 1.8rem;
     line-height: 1.75em;
@@ -199,7 +199,7 @@ body {
 }
 
 ::selection {
-    background: #D6EDFF;
+    background: #EFBE52;
 }
 
 h1, h2, h3,
@@ -210,7 +210,7 @@ h4, h5, h6 {
     color: #2E2E2E;
     line-height: 1.15em;
     margin: 0 0 0.4em 0;
-    font-family: "Open Sans", sans-serif;
+    font-family: "nimbus-sans", sans-serif;
     text-rendering: geometricPrecision;
 }
 
@@ -218,11 +218,16 @@ h1 {
     font-size: 5rem;
     letter-spacing: -2px;
     text-indent: -3px;
+    color:#EFBE52;
 }
 
 h2 {
+    font-weight:900;
     font-size: 3.6rem;
-    letter-spacing: -1px;
+    letter-spacing: 0px;
+    line-height: 1;
+    color:#EFBE52;
+    text-transform:uppercase;
 }
 
 h3 {
@@ -242,12 +247,12 @@ h6 {
 }
 
 a {
-    color: #4A4A4A;
+    color:#EFBE52;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #111;
+    color: #D6A949;
 }
 
 p, ul, ol, dl {
@@ -504,8 +509,8 @@ body.nav-opened .site-wrapper {
     position: relative;
     display: table;
     width: 100%;
-    height: 75vh;
-    margin-bottom: 5rem;
+    height: 35vh;
+    margin-bottom: 10rem;
     text-align: center;
     background: #222 no-repeat center center;
     background-size: cover;
@@ -524,7 +529,7 @@ body.nav-opened .site-wrapper {
 
 .main-nav a {
     text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'nimbus-sans', sans-serif;
 }
 
 /* Navigation */
@@ -699,7 +704,7 @@ body.nav-opened .nav {
     color: #111 !important; /* Overides `.nav a:link, .nav a:visited` colour */
     text-align: center;
     font-size: 12px;
-    font-family: "Open Sans", sans-serif;
+    font-family: "nimbus-sans", sans-serif;
     text-transform: uppercase;
     text-decoration: none;
     line-height: 35px;
@@ -715,7 +720,7 @@ body.nav-opened .nav {
 
 /* Create a bouncing scroll-down arrow on homepage with cover image */
 .scroll-down {
-    display: block;
+    display: none;
     position: absolute;
     z-index: 100;
     bottom: 45px;
@@ -868,20 +873,24 @@ body.nav-opened .nav {
 
 /* The details of your blog. Defined in ghost/settings/ */
 .page-title {
+    display:none;
+
     margin: 10px 0 10px 0;
     font-size: 5rem;
     letter-spacing: -1px;
     font-weight: 700;
-    font-family: "Open Sans", sans-serif;
+    font-family: "nimbus-sans", sans-serif;
     color: #fff;
 }
 
 .page-description {
+    display:none;
+
     margin: 0;
     font-size: 2rem;
     line-height: 1.5em;
     font-weight: 400;
-    font-family: "Merriweather", serif;
+    font-family: "nimbus-sans", serif;
     letter-spacing: 0.01rem;
     color: rgba(255,255,255,0.8);
 }
@@ -915,20 +924,25 @@ body.nav-opened .nav {
 }
 
 /* Every post, on every page, gets this style on its <article> tag */
+
+.home-template .post{
+    overflow:auto;
+}
+
 .post {
     position: relative;
     width: 80%;
     max-width: 710px;
     margin: 4rem auto;
-    padding-bottom: 4rem;
-    border-bottom: #EBF2F6 1px solid;
+    padding-bottom: 2rem;
+    margin-bottom:2rem;
     word-wrap: break-word;
 }
 
 /* Add a little circle in the middle of the border-bottom on our .post
    just for the lolz and stylepoints. */
 .post:after {
-    display: block;
+    display: none;
     content: "";
     width: 7px;
     height: 7px;
@@ -950,26 +964,56 @@ body:not(.post-template) .post-title {
     text-decoration: none;
 }
 
+.post-excerpt {
+    margin-top:0.6rem;
+}
+
 .post-excerpt p {
+    padding:1.8rem 0 0 0;
+    border-top:#111111 3px solid;
     margin: 0;
-    font-size: 0.9em;
-    line-height: 1.7em;
+    color:#111111;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+.post-left{
+    float:left;
+    width:48%;
+    padding-right:2%;
+}
+
+.post-right{
+    float:right;
+    width:48%;
+    padding-left:2%;
+}
+
+.post-container {
+    position:relative;
 }
 
 .read-more {
     text-decoration: none;
+    font-size:20px;
 }
 
 .post-meta {
     display: block;
-    margin: 1.75rem 0 0 0;
-    font-family: "Open Sans", sans-serif;
-    font-size: 1.5rem;
+    margin: 0rem 0 0.5rem 0;
+    font-family: "nimbus-sans", sans-serif;
+    font-weight:700;
+    font-style:normal;
+    text-transform: uppercase;
+    letter-spacing:2px;
+    font-size: 1.3rem;
     line-height: 2.2rem;
-    color: #9EABB3;
+    color: #B2B2B2;
 }
 
 .author-thumb {
+    display:none;
+
     width: 24px;
     height: 24px;
     float: left;
@@ -978,7 +1022,7 @@ body:not(.post-template) .post-title {
 }
 
 .post-meta a {
-    color: #9EABB3;
+    color: #B2B2B2;
     text-decoration: none;
 }
 
@@ -1312,7 +1356,9 @@ body:not(.post-template) .post-title {
 /* Location, website, and link */
 .author-profile .author-meta {
     margin: 2rem 0;
-    font-family: "Merriweather", serif;
+    font-family: "nimbus-sans", serif;
+    font-weight:700;
+    font-style:normal;
     letter-spacing: 0.01rem;
     font-size: 1.7rem;
 }
@@ -1398,7 +1444,7 @@ body:not(.post-template) .post-title {
     padding: 4px 10px 5px;
     text-transform: uppercase;
     font-size: 1.1rem;
-    font-family: "Open Sans", sans-serif;
+    font-family: "nimbus-sans", sans-serif;
     color: rgba(255,255,255,0.8);
     border: rgba(255,255,255,0.5) 1px solid;
     border-radius: 4px;
@@ -1490,7 +1536,7 @@ body:not(.post-template) .post-title {
     width: 80%;
     max-width: 710px;
     margin: 4rem auto;
-    font-family: "Open Sans", sans-serif;
+    font-family: "nimbus-sans", sans-serif;
     font-size: 1.3rem;
     color: #9EABB3;
     text-align: center;
@@ -1574,7 +1620,7 @@ body:not(.post-template) .post-title {
     position: relative;
     margin: 8rem 0 0 0;
     padding: 1rem 15px;
-    font-family: "Open Sans", sans-serif;
+    font-family: "nimbus-sans", sans-serif;
     font-size: 1rem;
     line-height: 1.75em;
     color: #BBC7CC;
@@ -1838,6 +1884,23 @@ body:not(.post-template) .post-title {
         margin-right: 16px;
         padding-bottom: 2rem;
         line-height: 1.65em;
+    }
+
+    .post-left{
+        float:none;
+        width:100%;
+        padding-right:0%;
+    }
+
+    .post-right{
+        float:none;
+        width:100%;
+        padding-left:0%;
+    }
+
+    .post-excerpt p {
+        padding:0.5rem 0 0 0;
+        border-top:none;
     }
 
     .post-date {
