@@ -1094,6 +1094,7 @@ body:not(.post-template) .post-title {
 
 .post-template .post-title {
     margin-bottom: 0;
+    text-transform: uppercase;
 }
 
 .post-template .post-meta {
